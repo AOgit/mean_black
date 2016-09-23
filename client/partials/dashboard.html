@@ -1,0 +1,19 @@
+<br>
+<div ng-controller="dashboardController">
+	<h1>Hi {{ user.user_name }}!</h1>
+	<button ng-click="logout()">Logout</button>
+	<a href="#/new_question">Add a Question</a>
+	<input type="text" placeholder="search..." ng-model="searchText">
+	<table>
+		<tr>
+			<th>Question</th>
+			<th>Answers</th>
+			<th>Action</th>
+		<tr>
+		<tr ng-repeat="query in questions | filter:searchText">
+			<td>{{ query.q_text }}</td>
+			<td>{{ query._answers.length }}</td>
+			<td><a href="#/question/{{ query._id }}">Show</a> | <a href="#/question/{{ query._id }}/new_answer">Answer</a>
+		</tr>
+	</table>
+</div>

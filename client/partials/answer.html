@@ -1,0 +1,14 @@
+<br>
+<div ng-controller="answerController">
+	<p><a href="#/dashboard">Home</a> | <a href="#/question/{{ question._id }}">Go Back to Question</a> | <a href="#/login">Logout</a></p>
+	<br>
+	<h2>{{ question.q_text }}</h2>
+	<h3>{{ question.q_desc }}</h3>
+	{{ error.errors }}
+	<form ng-submit="giveAns()">
+		Your Answer: <textarea rows="4" cols="50" ng-model="newAnswer.a_text"></textarea>
+		Supporting details for your answer (optional) <textarea rows="4" cols="50" ng-model="newAnswer.a_support"></textarea>
+		<input type="submit" value="Submit">
+	</form>
+	<a href="#/dashboard">Cancel</a>
+</div>

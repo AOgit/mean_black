@@ -1,0 +1,13 @@
+<br>
+<div ng-controller="nQuestionController">
+	<a href="#/dashboard">Home</a>
+	<a href="#/login">Logout</a>
+	<h1>New Question</h1>
+	{{ error.errors }}
+	<form ng-submit="postQuery()">
+		Question <textarea rows="4" cols="50" ng-model="newQuery.q_text"></textarea>
+		Description (optional) <textarea rows="4" cols="50" ng-model="newQuery.q_desc"></textarea>
+		<input type="submit" value="Submit">
+	</form>
+	<a href="#/dashboard">Cancel</a>
+</div>
